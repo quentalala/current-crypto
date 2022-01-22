@@ -4,10 +4,16 @@ import millify from "millify";
 import { Typography, Row, Col, Statistic } from "antd";
 import { Link } from "react-router-dom";
 
+import { useGetCryptosQuery } from "../services/cryptoApi";
+
 const { Title } = Typography;
 // Destructuring Title from typography don't have to type Typography.Title
 
 const Homepage = () => {
+  const { data, isFetching } = useGetCryptosQuery();
+
+  console.log(data);
+
   return (
     <>
       <Title level={2} className="heading">
