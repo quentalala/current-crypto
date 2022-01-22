@@ -1,10 +1,11 @@
 import React from "react";
 import millify from "millify";
-// Millify is the package that's going to format the numbers
+// millify is the package that's going to format the numbers
 import { Typography, Row, Col, Statistic } from "antd";
 import { Link } from "react-router-dom";
 
 import { useGetCryptosQuery } from "../services/cryptoApi";
+// hook to make API request
 
 import { Cryptocurrencies } from "../components";
 import { News } from "../components";
@@ -14,9 +15,10 @@ const { Title } = Typography;
 
 const Homepage = () => {
   const { data, isFetching } = useGetCryptosQuery();
-  const globalStats = data?.data?.stats;
-
+  // redux provides isFetching state
   if (isFetching) return "Loading...";
+
+  const globalStats = data?.data?.stats;
 
   return (
     <>
@@ -26,7 +28,7 @@ const Homepage = () => {
       <Row>
         <Col
           span={12}
-          // Antd uses a span of 24 spaces, whereas MUI uses 12 spaces!
+          // antd uses a span of 24 spaces, whereas MUI uses 12 spaces!
         >
           <Statistic title="Total Cryptocurrencies" value={globalStats.total} />
         </Col>
