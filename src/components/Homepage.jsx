@@ -14,7 +14,7 @@ const { Title } = Typography;
 // Destructuring Title from typography don't have to type Typography.Title
 
 const Homepage = () => {
-  const { data, isFetching } = useGetCryptosQuery();
+  const { data, isFetching } = useGetCryptosQuery(10);
   // redux provides isFetching state
   if (isFetching) return "Loading...";
 
@@ -68,7 +68,7 @@ const Homepage = () => {
       <Cryptocurrencies simplified />
       <div className="home-heading-container">
         <Title level={2} className="home-title">
-          Latest Crypto News{" "}
+          Latest Crypto News
         </Title>
         <Title level={3} className="show-more">
           <Link to="/news">Show more</Link>
