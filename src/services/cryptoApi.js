@@ -21,10 +21,13 @@ export const cryptoApi = createApi({
       query: (count) => createRequest(`/coins?limit=${count}`),
       //   arrow function points to the request you want
     }),
+    getCryptoDetails: builder.query({
+      query: (coinId) => createRequest(`/coin/${coinId}`),
+    }),
   }),
 });
 
-export const { useGetCryptosQuery } = cryptoApi;
+export const { useGetCryptosQuery, useGetCryptoDetailsQuery } = cryptoApi;
 // redux toolkit creates a hook you can instantly call to get the data for your query
 // in this case you have getCryptos as the end point
 // so you prepend 'use' and append 'Query' to the endpoint name
