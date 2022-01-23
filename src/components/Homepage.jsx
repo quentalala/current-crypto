@@ -66,6 +66,7 @@ const Homepage = () => {
         </Title>
       </div>
       <Cryptocurrencies simplified />
+      {/* simplified prop, used to conditionally render amount of cryptocurrencies */}
       <div className="home-heading-container">
         <Title level={2} className="home-title">
           Latest Crypto News
@@ -75,6 +76,9 @@ const Homepage = () => {
         </Title>
       </div>
       <News simplified />
+      {/* simplified prop, used to conditionally render amount of news */}
+      {/* simplified=true only when homepage component is rendered? */}
+      {/* simplified=false when the other components are not rendered as a child of homepage? */}
     </>
   );
 };

@@ -7,13 +7,14 @@ import { useGetCryptosQuery } from "../services/cryptoApi";
 
 const { Text, Title } = Typography;
 const { Option } = Select;
+// object destructuring from antd for cleaner syntax
 
 const demoImage =
   "http://coinrevolution.com/wp-content/uploads/2020/06/cryptonews.jpg";
+// backup image for news card
 
 const News = ({ simplified }) => {
   const [newsCategory, setNewsCategory] = useState("Cryptocurrency");
-
   const { data: cryptoNews } = useGetCryptoNewsQuery({
     newsCategory: newsCategory,
     count: simplified ? 6 : 12,
